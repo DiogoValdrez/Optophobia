@@ -2,4 +2,6 @@
 First Commit
 Started the git repository and the unity project
 Project intial planing
+0.00b
+Added intial art and started croping
 

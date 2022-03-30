@@ -1,0 +1,5 @@
+0.00a
+First Commit
+Started the git repository and the unity project
+Project intial planing
+

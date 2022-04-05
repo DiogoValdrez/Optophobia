@@ -4,7 +4,7 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 713163285030852893
-    second: 0x72_DungeonTilesetII_v1.4_0
+    second: topwall_01
   - first:
       213: 8178937437051159178
     second: 0x72_DungeonTilesetII_v1.4_1
@@ -28,7 +28,7 @@ TextureImporter:
     second: 0x72_DungeonTilesetII_v1.4_7
   - first:
       213: -1747295740152761478
-    second: 0x72_DungeonTilesetII_v1.4_8
+    second: wall_01
   - first:
       213: -5856639455263703340
     second: 0x72_DungeonTilesetII_v1.4_9
@@ -271,7 +271,7 @@ TextureImporter:
     second: 0x72_DungeonTilesetII_v1.4_88
   - first:
       213: -6639614421653432895
-    second: 0x72_DungeonTilesetII_v1.4_89
+    second: floor_01
   - first:
       213: -2877984948856431624
     second: 0x72_DungeonTilesetII_v1.4_90
@@ -340,10 +340,10 @@ TextureImporter:
     second: 0x72_DungeonTilesetII_v1.4_111
   - first:
       213: 7868678852752518607
-    second: 0x72_DungeonTilesetII_v1.4_112
+    second: pillar_6
   - first:
       213: 1411120461256848347
-    second: 0x72_DungeonTilesetII_v1.4_113
+    second: pillar_3
   - first:
       213: 9109733454602640593
     second: 0x72_DungeonTilesetII_v1.4_114
@@ -421,10 +421,10 @@ TextureImporter:
     second: 0x72_DungeonTilesetII_v1.4_138
   - first:
       213: 8227823526478117139
-    second: 0x72_DungeonTilesetII_v1.4_139
+    second: pillar_5
   - first:
       213: 6785622350595133177
-    second: 0x72_DungeonTilesetII_v1.4_140
+    second: pillar_2
   - first:
       213: -7444256275352845755
     second: 0x72_DungeonTilesetII_v1.4_141
@@ -478,10 +478,10 @@ TextureImporter:
     second: 0x72_DungeonTilesetII_v1.4_157
   - first:
       213: 4483331102382818611
-    second: 0x72_DungeonTilesetII_v1.4_158
+    second: pillar_4
   - first:
       213: 8456609838760430575
-    second: 0x72_DungeonTilesetII_v1.4_159
+    second: pillar_1
   - first:
       213: -8449434826336698142
     second: player1_0
@@ -1678,7 +1678,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_0
+      name: topwall_01
       rect:
         serializedVersion: 2
         x: 16
@@ -1846,7 +1846,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_8
+      name: wall_01
       rect:
         serializedVersion: 2
         x: 16
@@ -3547,7 +3547,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_89
+      name: floor_01
       rect:
         serializedVersion: 2
         x: 16
@@ -4030,7 +4030,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_112
+      name: pillar_6
       rect:
         serializedVersion: 2
         x: 80
@@ -4051,7 +4051,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_113
+      name: pillar_3
       rect:
         serializedVersion: 2
         x: 96
@@ -4597,7 +4597,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_139
+      name: pillar_5
       rect:
         serializedVersion: 2
         x: 80
@@ -4618,7 +4618,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_140
+      name: pillar_2
       rect:
         serializedVersion: 2
         x: 96
@@ -4807,7 +4807,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_158
+      name: pillar_4
       rect:
         serializedVersion: 2
         x: 80
@@ -4828,7 +4828,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_159
+      name: pillar_1
       rect:
         serializedVersion: 2
         x: 96

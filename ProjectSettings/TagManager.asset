@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Blocking
+  - Characters
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 2941570613
+    locked: 0
+  - name: Characters
+    uniqueID: 2523295091
+    locked: 0
+  - name: Decoration
+    uniqueID: 2117444687
+    locked: 0
+  - name: Colliders
+    uniqueID: 66914317
     locked: 0

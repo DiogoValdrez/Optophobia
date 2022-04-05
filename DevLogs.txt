@@ -4,4 +4,7 @@ Started the git repository and the unity project
 Project intial planing
 0.00b
 Added intial art and started croping
-
+0.00b+
+Forgot to add Logs in git
+0.00c
+Added some layers and started the floor tile palette

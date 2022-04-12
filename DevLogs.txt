@@ -8,3 +8,8 @@ Added intial art and started croping
 Forgot to add Logs in git
 0.00c
 Added some layers and started the floor tile palette
+Desogn some simple floor and added a collider to the player and tilepallet
+0.00d
+Added basic movement and colliding for the player
+Fixed the colliding bug using the offset of the collider2d
+Added CapsuleCollider to help on the pillar colliders

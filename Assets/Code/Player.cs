@@ -28,12 +28,12 @@ public class Player : MonoBehaviour
         }
         //colliders
         //go to edit->project setting->physics 2d and turn of Queries start in coliders, this way the player doesnt colide with himself
-        hit = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, new Vector2(x, 0), Mathf.Abs(x), LayerMask.GetMask("Actor", "Blocking"));
+        hit = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, new Vector2(x, 0), Mathf.Abs(x), LayerMask.GetMask("Characters", "Blocking"));
         if(hit.collider == null)
         {
             transform.Translate(x, 0, 0);
         }
-        hit = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, new Vector2(0, y), Mathf.Abs(y), LayerMask.GetMask("Actor", "Blocking"));
+        hit = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, new Vector2(0, y), Mathf.Abs(y), LayerMask.GetMask("Characters", "Blocking"));
         if (hit.collider == null)
         {
             transform.Translate(0, y, 0);

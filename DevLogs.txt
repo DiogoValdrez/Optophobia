@@ -13,3 +13,6 @@ Desogn some simple floor and added a collider to the player and tilepallet
 Added basic movement and colliding for the player
 Fixed the colliding bug using the offset of the collider2d
 Added CapsuleCollider to help on the pillar colliders
+0.00e
+Added basic enemy with collider
+Fixed colliding mask

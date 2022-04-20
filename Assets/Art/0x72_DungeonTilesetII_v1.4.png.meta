@@ -166,10 +166,10 @@ TextureImporter:
     second: 0x72_DungeonTilesetII_v1.4_53
   - first:
       213: 5058106581062625451
-    second: 0x72_DungeonTilesetII_v1.4_54
+    second: enemy0_0
   - first:
       213: 8530176930102535068
-    second: 0x72_DungeonTilesetII_v1.4_55
+    second: enemy0_1
   - first:
       213: -7607617516079556826
     second: 0x72_DungeonTilesetII_v1.4_56
@@ -2812,7 +2812,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_54
+      name: enemy0_0
       rect:
         serializedVersion: 2
         x: 368
@@ -2833,16 +2833,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_55
+      name: enemy0_1
       rect:
         serializedVersion: 2
-        x: 384
+        x: 388
         y: 464
-        width: 16
-        height: 16
+        width: 10
+        height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0

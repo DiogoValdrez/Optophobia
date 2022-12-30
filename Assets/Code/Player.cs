@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 2;
+    public float speed = 4;
     protected BoxCollider2D collider2d;
     protected RaycastHit2D hit;
+    float x;
+    float y;
 
     protected void Start()
     {
@@ -14,10 +16,16 @@ public class Player : MonoBehaviour
     }
     void FixedUpdate()
     {
-        //get the input
-        float x = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
-        float y = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
-        //rotate the sprite
+        //get the input(maybe trade with button insted of horizi«ontal and vertical)
+        x = Input.GetAxisRaw("Horizontal") * speed * Time.deltaTime;
+        y = Input.GetAxisRaw("Vertical") * speed * Time.deltaTime;
+        // Limit the player's movement to one direction at a time
+        if (x != 0 && y != 0)
+        {
+            x = x*Mathf.Sqrt(2)/2;
+            y = y*Mathf.Sqrt(2)/2;
+        }
+        //rotate the sprite, change with rwin stick funcionality
         if(x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);

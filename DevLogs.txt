@@ -16,3 +16,7 @@ Added CapsuleCollider to help on the pillar colliders
 0.00e
 Added basic enemy with collider
 Fixed colliding mask
+0.00f
+Fixed diagonal boost bug
+0.00g
+Added weapon object and started weapon script with rotation

@@ -39,12 +39,12 @@ public class Player : MonoBehaviour
         hit = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, new Vector2(x, 0), Mathf.Abs(x), LayerMask.GetMask("Characters", "Blocking"));
         if(hit.collider == null)
         {
-            transform.Translate(x, 0, 0);
+            transform.parent.Translate(x, 0, 0);
         }
         hit = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, new Vector2(0, y), Mathf.Abs(y), LayerMask.GetMask("Characters", "Blocking"));
         if (hit.collider == null)
         {
-            transform.Translate(0, y, 0);
+            transform.parent.Translate(0, y, 0);
         }
     }
 }

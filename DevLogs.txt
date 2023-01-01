@@ -20,3 +20,5 @@ Fixed colliding mask
 Fixed diagonal boost bug
 0.00g
 Added weapon object and started weapon script with rotation
+0.00h
+Added camera control

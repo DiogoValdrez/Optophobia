@@ -50,6 +50,9 @@ TagManager:
   - name: Decoration
     uniqueID: 2117444687
     locked: 0
+  - name: Weapon
+    uniqueID: 3625112221
+    locked: 0
   - name: Colliders
     uniqueID: 66914317
     locked: 0

@@ -17,7 +17,6 @@ public abstract class Fighter : MonoBehaviour
     protected Vector3 pushDirection;
 
     // All fighters can ReceiveDamage / Die
-    // All fighters can ReceiveDamage / Die
     protected virtual void ReceiveDamage(Damage dmg)
     {
         if(Time.time - lastImune > imuneTime)
@@ -25,8 +24,6 @@ public abstract class Fighter : MonoBehaviour
             lastImune = Time.time;
             hitpoint -= dmg.damageAmount;
             pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
-            Debug.Log(pushDirection);
-
             if(hitpoint <= 0)
             {
                 hitpoint = 0;

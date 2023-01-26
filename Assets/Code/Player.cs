@@ -16,4 +16,6 @@ public class Player : Mover
 
         UpdateParentMotor(new Vector3(x,y,0));        
     }
+
+    //TODO: ADD receive damage and death and destroying heartswhen  receiving
 }

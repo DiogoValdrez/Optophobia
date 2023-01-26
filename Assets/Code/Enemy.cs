@@ -71,4 +71,8 @@ public class Enemy : Mover
         }
         UpdateParentMotor(new Vector3(0,0,0));
     }
+    protected override void Death()
+    {
+        Destroy(gameObject);
+    }
 }

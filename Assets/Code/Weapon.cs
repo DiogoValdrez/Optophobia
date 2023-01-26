@@ -79,5 +79,17 @@ public class Weapon : Collidable
                 coll.SendMessage("ReceiveDamage", dmg);
             }
         }
+        if(coll.tag == "Orbit")
+        {
+            Damage dmg = new Damage
+            {
+                damageAmount = 1,//damagePoint[weaponLevel],
+                origin = transform.position,
+            };
+
+            if(attackPowered){
+                coll.SendMessage("ReceiveDamage", dmg);
+            }
+        }
     }
 }

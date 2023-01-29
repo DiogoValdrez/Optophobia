@@ -7,7 +7,7 @@ public abstract class Fighter : MonoBehaviour
     // Public fields
     public int hitpoint = 10;
     public int maxHitpoint = 10;
-    public float pushRecoverySpeed = 0.2f;
+    public float pushRecoverySpeed = 1f;
 
     // Imunity
     public float imuneTime = 1.0f;
@@ -16,11 +16,15 @@ public abstract class Fighter : MonoBehaviour
     // Push
     protected Vector3 pushDirection;
 
+
+    public bool ahh = false;
+
     // All fighters can ReceiveDamage / Die
     protected virtual void ReceiveDamage(Damage dmg)
     {
         if(Time.time - lastImune > imuneTime)
         {
+            ahh = true;
             lastImune = Time.time;
             hitpoint -= dmg.damageAmount;
             pushDirection = (transform.position - dmg.origin).normalized * dmg.pushForce;
@@ -31,7 +35,8 @@ public abstract class Fighter : MonoBehaviour
             }
         }
     }
-    protected virtual void Death()
+    //maybe provisorio em public, tenho de trocar quando tiver game manager
+    public virtual void Death()
     {
         Debug.Log("Death was not implemented in "+ this.name);
     }

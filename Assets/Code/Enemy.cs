@@ -18,7 +18,7 @@ public class Enemy : Mover
     protected override void Start()
     {
         base.Start();    
-        hitbox = transform.GetChild(0).GetComponent<BoxCollider2D>();
+        hitbox = transform.parent.GetChild(1).GetComponent<BoxCollider2D>();
     }
 
     private void FixedUpdate()//TODO: ADD the rest from TOPDUNGEON and change to follow until you leave the room maybe
@@ -71,8 +71,8 @@ public class Enemy : Mover
         }
         UpdateParentMotor(new Vector3(0,0,0));
     }
-    protected override void Death()
+    public override void Death()
     {
-        Destroy(gameObject);
+        Destroy(transform.parent.gameObject);
     }
 }

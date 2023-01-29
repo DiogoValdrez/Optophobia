@@ -886,10 +886,10 @@ TextureImporter:
     second: 0x72_DungeonTilesetII_v1.4_293
   - first:
       213: 7212647674079098227
-    second: 0x72_DungeonTilesetII_v1.4_294
+    second: door_closed_03
   - first:
       213: -2275353719410107672
-    second: 0x72_DungeonTilesetII_v1.4_295
+    second: door_closed_06
   - first:
       213: -7734443636040445398
     second: 0x72_DungeonTilesetII_v1.4_296
@@ -943,16 +943,16 @@ TextureImporter:
     second: 0x72_DungeonTilesetII_v1.4_312
   - first:
       213: 590356392098470429
-    second: 0x72_DungeonTilesetII_v1.4_313
+    second: door_closed_01
   - first:
       213: 3683505733087320172
-    second: 0x72_DungeonTilesetII_v1.4_314
+    second: door_closed_04
   - first:
       213: -2859990166162589417
-    second: 0x72_DungeonTilesetII_v1.4_315
+    second: door_closed_07
   - first:
       213: -2232551093196777029
-    second: 0x72_DungeonTilesetII_v1.4_316
+    second: door_closed_09
   - first:
       213: 5741086117314654365
     second: 0x72_DungeonTilesetII_v1.4_317
@@ -1000,16 +1000,16 @@ TextureImporter:
     second: 0x72_DungeonTilesetII_v1.4_331
   - first:
       213: -7477315544497358817
-    second: 0x72_DungeonTilesetII_v1.4_332
+    second: door_closed_02
   - first:
       213: -1428083013892434510
-    second: 0x72_DungeonTilesetII_v1.4_333
+    second: door_closed_05
   - first:
       213: 5182761952820565670
-    second: 0x72_DungeonTilesetII_v1.4_334
+    second: door_closed_08
   - first:
       213: 331408679044879952
-    second: 0x72_DungeonTilesetII_v1.4_335
+    second: door_closed_10
   - first:
       213: -381523528107581432
     second: 0x72_DungeonTilesetII_v1.4_336
@@ -7663,7 +7663,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_294
+      name: door_closed_03
       rect:
         serializedVersion: 2
         x: 32
@@ -7684,7 +7684,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_295
+      name: door_closed_06
       rect:
         serializedVersion: 2
         x: 48
@@ -8062,7 +8062,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_313
+      name: door_closed_01
       rect:
         serializedVersion: 2
         x: 16
@@ -8083,7 +8083,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_314
+      name: door_closed_04
       rect:
         serializedVersion: 2
         x: 32
@@ -8104,7 +8104,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_315
+      name: door_closed_07
       rect:
         serializedVersion: 2
         x: 48
@@ -8125,7 +8125,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_316
+      name: door_closed_09
       rect:
         serializedVersion: 2
         x: 64
@@ -8461,7 +8461,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_332
+      name: door_closed_02
       rect:
         serializedVersion: 2
         x: 16
@@ -8482,7 +8482,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_333
+      name: door_closed_05
       rect:
         serializedVersion: 2
         x: 32
@@ -8503,7 +8503,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_334
+      name: door_closed_08
       rect:
         serializedVersion: 2
         x: 48
@@ -8524,7 +8524,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_335
+      name: door_closed_10
       rect:
         serializedVersion: 2
         x: 64

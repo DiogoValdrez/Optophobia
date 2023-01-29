@@ -25,7 +25,11 @@ public class OrbitMotor : MonoBehaviour //TODO: MAke inherit from orbit make so 
         }else if(x < 0){
             speed = -orbitSpeed;
         }
-        transform.RotateAround(target.position, zAxis, speed);
+        if(!PauseMenu.GameIsPaused)
+        {
+            transform.RotateAround(target.position, zAxis, speed);
+        }
+        
     }
     protected void ReceiveDamage(Damage dmg)
     {

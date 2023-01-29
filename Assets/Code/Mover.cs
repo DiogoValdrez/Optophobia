@@ -39,16 +39,39 @@ public abstract class Mover : Fighter //Abstracted means that can only be inheri
 
         //colliding
         //go to edit->project setting->physics 2d and turn of Queries start in coliders, this way the player doesnt colide with himself
-        hit = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, new Vector2(x, 0), Mathf.Abs(x), LayerMask.GetMask("Characters", "Blocking"));
-        if(hit.collider == null)
-        {
-            transform.parent.Translate(moveDelta.x, 0, 0);
-        }
-        hit = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, new Vector2(0, y), Mathf.Abs(y), LayerMask.GetMask("Characters", "Blocking"));
-        if (hit.collider == null)
-        {
-            transform.parent.Translate(0, moveDelta.y, 0);
-        }
 
+        bool teste = false;
+        RaycastHit2D hit = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, moveDelta, moveDelta.magnitude, LayerMask.GetMask("Characters", "Blocking"));
+        if(hit.collider != null)
+        {
+            if(hit.collider.transform.position.y != transform.parent.position.y)
+            {
+                // Obstacle is below or on top, move horizontally
+                Vector2 moveDelta2 = new Vector2(moveDelta.x, 0);
+                RaycastHit2D hit2 = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, moveDelta2, moveDelta2.magnitude, LayerMask.GetMask("Characters", "Blocking"));
+                if(hit2.collider == null)
+                {
+                    transform.parent.Translate(moveDelta.x, 0, 0);
+                    teste = true;
+                }
+            }
+            if(hit.collider.transform.position.x != transform.parent.position.x && !teste)
+            {
+                // Obstacle is on the side, move vertically
+                Vector2 moveDelta2 = new Vector2(0, moveDelta.y);
+                RaycastHit2D hit2 = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, moveDelta2, moveDelta2.magnitude, LayerMask.GetMask("Characters", "Blocking"));
+                if(hit2.collider == null)
+                {
+                    transform.parent.Translate(0, moveDelta.y, 0);
+                }
+            }
+        }
+        else
+        {
+            transform.parent.Translate(moveDelta.x, moveDelta.y, 0);
+        }
+        
+        
+        
     }
 }

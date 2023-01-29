@@ -6,6 +6,11 @@ public class OrbitMaker : MonoBehaviour//Collectable
     public GameObject prefab1;
     protected float r = 0.8f;
     protected List<GameObject> Orbiting = new List<GameObject>();
+
+    //provisorio ate receber gamemanager
+    public Transform player;
+
+
     //public GameObject prefab2;
 
     //TODO: Think on where to put this, maybe on the pick up(use the chest code)
@@ -51,6 +56,16 @@ public class OrbitMaker : MonoBehaviour//Collectable
     {
         Orbiting.Remove(child);
         Destroy(child);
+        player.GetComponent<Player>().hitpoint -=1;
+        if(player.GetComponent<Player>().hitpoint <= 0)
+        {
+            player.GetComponent<Player>().Death();
+        }
+    }
+
+    public void RemoveLastObjectInOrbit(){
+        Destroy(Orbiting[Orbiting.Count-1]);
+        Orbiting.RemoveAt(Orbiting.Count-1);
     }
 
     Vector3 GetNextPosition(Vector3 lastPos)

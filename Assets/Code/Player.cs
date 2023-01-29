@@ -18,4 +18,13 @@ public class Player : Mover
     }
 
     //TODO: ADD receive damage and death and destroying heartswhen  receiving
+    protected override void ReceiveDamage(Damage dmg)
+    {
+        base.ReceiveDamage(dmg);
+        if(ahh)
+        {
+            transform.parent.GetComponentInChildren<OrbitMaker>().RemoveLastObjectInOrbit();
+            ahh = false;
+        }       
+    }
 }

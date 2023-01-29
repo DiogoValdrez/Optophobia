@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : Mover
 {   
+    public GameObject deathMenuCanvas;
+
     protected override void Start()
     {
         base.Start();      
@@ -26,5 +28,12 @@ public class Player : Mover
             transform.parent.GetComponentInChildren<OrbitMaker>().RemoveLastObjectInOrbit();
             ahh = false;
         }       
+    }
+
+    public override void Death()
+    {
+        Time.timeScale = 0f;
+        deathMenuCanvas.SetActive(true);
+        //Destroy(transform.parent.gameObject);
     }
 }

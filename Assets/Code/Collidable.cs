@@ -5,12 +5,12 @@ using UnityEngine;
 public abstract class Collidable : MonoBehaviour
 {
     public ContactFilter2D filter;
-    private BoxCollider2D boxCollider;
+    protected BoxCollider2D boxCollider;
     private Collider2D[] hits = new Collider2D[10];
 
     protected virtual void Start()
     {
-        boxCollider = GetComponentInChildren<BoxCollider2D>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     protected virtual void Update()

@@ -154,7 +154,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1510328297408621992}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyWrapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -24,30 +24,34 @@ public class Enemy : Mover
     private void FixedUpdate()//TODO: ADD the rest from TOPDUNGEON and change to follow until you leave the room maybe
     {
         // Is the player in range?
-        if(Vector3.Distance(playerTransform.position, startingPosition) < chaseLenght)
-        {
-            if(Vector3.Distance(playerTransform.position, startingPosition) < triggerLenght)
-            {
-                chasing = true;
-            }
+        // if(Vector3.Distance(playerTransform.position, startingPosition) < chaseLenght)
+        // {
+        //     if(Vector3.Distance(playerTransform.position, startingPosition) < triggerLenght)
+        //     {
+        //         chasing = true;
+        //     }
 
-            if(chasing)
-            {
-                if (!collidingWithPlayer)
-                {
-                    UpdateParentMotor((playerTransform.position - transform.position).normalized);
-                }
-            }
-            else
-            {
-                UpdateParentMotor(startingPosition - transform.position);
-            }
+        //     if(chasing)
+        //     {
+        //         if (!collidingWithPlayer)
+        //         {
+        //             UpdateParentMotor((playerTransform.position - transform.position).normalized);
+        //         }
+        //     }
+        //     else
+        //     {
+        //         UpdateParentMotor(startingPosition - transform.position);
+        //     }
 
-        }
-        else
+        // }
+        // else
+        // {
+        //     UpdateParentMotor(startingPosition - transform.position);
+        //     chasing = false;
+        // }
+        if (!collidingWithPlayer)
         {
-            UpdateParentMotor(startingPosition - transform.position);
-            chasing = false;
+            UpdateParentMotor((playerTransform.position - transform.position).normalized);
         }
 
 

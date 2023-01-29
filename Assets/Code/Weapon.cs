@@ -16,6 +16,11 @@ public class Weapon : Collidable
     [SerializeField]
     protected int weaponSpeed = 200;
 
+    protected override void Start()
+    {
+        boxCollider = GetComponentInChildren<BoxCollider2D>();
+    }
+
     protected override void Update()
     {
         base.Update();

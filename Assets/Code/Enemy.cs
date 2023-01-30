@@ -21,7 +21,7 @@ public class Enemy : Mover
         hitbox = transform.parent.GetChild(1).GetComponent<BoxCollider2D>();
     }
 
-    private void FixedUpdate()//TODO: ADD the rest from TOPDUNGEON and change to follow until you leave the room maybe
+    protected virtual void FixedUpdate()//TODO: ADD the rest from TOPDUNGEON and change to follow until you leave the room maybe
     {
         // Is the player in range?
         // if(Vector3.Distance(playerTransform.position, startingPosition) < chaseLenght)
@@ -51,7 +51,7 @@ public class Enemy : Mover
         // }
         if (!collidingWithPlayer)
         {
-            UpdateParentMotor((playerTransform.position - transform.position).normalized);
+            UpdateParentMotor((GameManager.instance.player.transform.position - transform.position).normalized);
         }
 
 

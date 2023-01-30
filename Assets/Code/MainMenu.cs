@@ -7,7 +7,11 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGmae()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        GameManager.instance.ClearSaves();
+        GameManager.instance.player.SetPlayerAlive();
+        GameManager.instance.player.hitpoint = 3;
+        GameManager.instance.SaveState();
+        UnityEngine.SceneManagement.SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void QuitGame()

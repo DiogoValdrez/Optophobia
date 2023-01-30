@@ -3,7 +3,6 @@ using UnityEngine;
 public class OrbitMotor : MonoBehaviour //TODO: MAke inherit from orbit make so you can destoi gameobject and remove from list
 {
     public Transform target;
-    public float orbitSpeed = 1f;
     protected float speed;
     public Vector3 axis = Vector3.up;
     public float radius = 1f;
@@ -21,9 +20,9 @@ public class OrbitMotor : MonoBehaviour //TODO: MAke inherit from orbit make so 
         speed= 0f;
         float x = Input.GetAxisRaw("Orbit");
         if(x > 0){
-            speed = orbitSpeed;
+            speed = GameManager.instance.OrbitSpeed;
         }else if(x < 0){
-            speed = -orbitSpeed;
+            speed = -GameManager.instance.OrbitSpeed;
         }
         if(!PauseMenu.GameIsPaused)
         {

@@ -11,6 +11,10 @@ public class Weapon : Collidable
     protected bool attacking = false;
     protected bool attackPowered = false;
 
+    protected AudioSource audioSource;
+    // public AudioClip swingSound;
+    public AudioClip hitSound;
+
     [SerializeField]
     protected float weaponTravel = 0.2f;
     [SerializeField]
@@ -19,6 +23,8 @@ public class Weapon : Collidable
     protected override void Start()
     {
         boxCollider = GetComponentInChildren<BoxCollider2D>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = hitSound;
     }
 
     protected override void Update()
@@ -41,17 +47,27 @@ public class Weapon : Collidable
 
         //TODO: Add direction for damage sistem and make less scuffed and add animation to have the feeling of a weapon
         if(((transform.rotation.eulerAngles - lastAng).magnitude / Time.deltaTime)>weaponSpeed){
-            if(!attacking){
+            if(!attacking){ 
                 attackStartAng = Time.fixedTime;
                 attacking = true;
                 transform.GetComponentsInChildren<SpriteRenderer>()[0].color = Color.blue;//trocar para fazer o getcomponent no start
             }else{
                 if((Time.fixedTime - attackStartAng) > weaponTravel){//tentar com distância depois
+
+                    // if(!audioSource.isPlaying)// || audioSource.clip!=swingSound)
+                    // {
+                    //     audioSource.clip = swingSound;
+                    //     audioSource.Play();
+                    // } 
+
                     attackPowered = true;
                     transform.GetComponentsInChildren<SpriteRenderer>()[0].color = Color.red;
                 }
             }                
         }else{
+            // if(audioSource.clip==swingSound){
+            //     audioSource.Pause();
+            // }            
             transform.GetComponentsInChildren<SpriteRenderer>()[0].color = Color.white;
             attacking = false;
             attackPowered = false;
@@ -71,8 +87,6 @@ public class Weapon : Collidable
     {
         if(coll.tag == "Fighter")
         {
-            //TODO: Add receive damage in enemy and palyer(we need enemy first)
-            // Create new damage object, then we will send it to the fighter we hit
             Damage dmg = new Damage
             {
                 damageAmount = 1,//damagePoint[weaponLevel],
@@ -81,6 +95,9 @@ public class Weapon : Collidable
             };
 
             if(attackPowered){
+                
+                audioSource.Play();
+                                
                 coll.SendMessage("ReceiveDamage", dmg);
             }
         }
@@ -93,6 +110,9 @@ public class Weapon : Collidable
             };
 
             if(attackPowered){
+                
+                audioSource.Play();
+                
                 coll.SendMessage("ReceiveDamage", dmg);
             }
         }

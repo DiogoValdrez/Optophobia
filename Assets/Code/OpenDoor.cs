@@ -9,6 +9,8 @@ public class OpenDoor : Collidable
     protected BoxCollider2D PortalCollider;
     public string sceneName;
 
+    protected AudioSource audioSource;
+
     protected GameObject test;
 
     protected override void Start()
@@ -16,6 +18,9 @@ public class OpenDoor : Collidable
         base.Start();
         DoorOpenSprite = GetComponent<SpriteRenderer>();
         PortalCollider = GetComponent<BoxCollider2D>();
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
+        audioSource.Pause();
     }
 
     protected override void Update()
@@ -32,6 +37,7 @@ public class OpenDoor : Collidable
         
         if(enemies.Count == 0)
         {
+            audioSource.UnPause();
             DoorOpenSprite.enabled = true;
             PortalCollider.enabled = true;
         }
@@ -42,9 +48,15 @@ public class OpenDoor : Collidable
         if(coll.name == "Player")
         {
             //Teleport the player
-            //GameManager.instance.SaveState();
+            GameManager.instance.SaveState();
             //string sceneName = sceneNames[Random.Range(0, sceneNames.Length)];
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+            //GameManager.instance.playerWrapper.SetActive(true);
         }
+    }
+
+    public void AddEnemy(GameObject enemy)
+    {
+        enemies.Add(enemy);
     }
 }

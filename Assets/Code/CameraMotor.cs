@@ -10,7 +10,7 @@ public class CameraMotor : MonoBehaviour
 
     private void Start()
     {
-        lookAt = GameObject.Find("Player").transform;// to fix lookat error
+        lookAt = GameManager.instance.playerWrapper.transform;// to fix lookat error
     }
     // Is called after Update and FixUpdate
     private void LateUpdate() 

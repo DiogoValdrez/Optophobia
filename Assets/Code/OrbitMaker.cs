@@ -7,9 +7,6 @@ public class OrbitMaker : MonoBehaviour//Collectable
     protected float r = 0.8f;
     protected List<GameObject> Orbiting = new List<GameObject>();
 
-    //provisorio ate receber gamemanager
-    public Transform player;
-
 
     //public GameObject prefab2;
 
@@ -37,10 +34,22 @@ public class OrbitMaker : MonoBehaviour//Collectable
     {
         //base.Start();
 
-        CreatObjectInOrbit(prefab1, new Vector3(r, 0, 0));
-        CreatObjectInOrbit(prefab1, GetNextPosition(new Vector3(r, 0, 0)));
-        CreatObjectInOrbit(prefab1, GetNextPosition(GetNextPosition(new Vector3(r, 0, 0))));
+        // CreatObjectInOrbit(prefab1, new Vector3(r, 0, 0));
+        // CreatObjectInOrbit(prefab1, GetNextPosition(new Vector3(r, 0, 0)));
+        // CreatObjectInOrbit(prefab1, GetNextPosition(GetNextPosition(new Vector3(r, 0, 0))));
         //RemoveObjectInOrbit(GetComponentInChildren<OrbitMotor>().gameObject);
+    }
+
+    protected virtual void Update(){
+        while(Orbiting.Count < GameManager.instance.player.hitpoint){
+            if(Orbiting.Count == 0){
+                CreatObjectInOrbit(prefab1, new Vector3(r, 0, 0));
+            }
+            CreatObjectInOrbit(prefab1, GetNextPosition(Orbiting[Orbiting.Count-1].transform.localPosition));
+        }
+        while(Orbiting.Count > GameManager.instance.player.hitpoint){
+            RemoveLastObjectInOrbit();
+        }
     }
 
     protected void CreatObjectInOrbit(GameObject prefab, Vector3 position)
@@ -56,10 +65,10 @@ public class OrbitMaker : MonoBehaviour//Collectable
     {
         Orbiting.Remove(child);
         Destroy(child);
-        player.GetComponent<Player>().hitpoint -=1;
-        if(player.GetComponent<Player>().hitpoint <= 0)
+        GameManager.instance.player.hitpoint -=1;
+        if(GameManager.instance.player.hitpoint <= 0)
         {
-            player.GetComponent<Player>().Death();
+            GameManager.instance.player.Death();
         }
     }
 

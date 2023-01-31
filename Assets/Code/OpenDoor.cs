@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class OpenDoor : Collidable
 {
     public List<GameObject> enemies;
     protected SpriteRenderer DoorOpenSprite;
     protected BoxCollider2D PortalCollider;
+    protected Light2D light2D;
     public string sceneName;
 
     protected AudioSource audioSource;
@@ -19,6 +21,7 @@ public class OpenDoor : Collidable
         DoorOpenSprite = GetComponent<SpriteRenderer>();
         PortalCollider = GetComponent<BoxCollider2D>();
         audioSource = GetComponent<AudioSource>();
+        light2D = GetComponentInChildren<Light2D>();
         audioSource.Play();
         audioSource.Pause();
     }
@@ -40,6 +43,7 @@ public class OpenDoor : Collidable
             audioSource.UnPause();
             DoorOpenSprite.enabled = true;
             PortalCollider.enabled = true;
+            light2D.enabled = true;
         }
     }
 

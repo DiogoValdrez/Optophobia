@@ -12,6 +12,7 @@ public abstract class Fighter : MonoBehaviour
     // Imunity
     public float imuneTime = 1.0f;
     protected float lastImune;
+    public bool imune = false;
 
     // Push
     protected Vector3 pushDirection;
@@ -41,7 +42,7 @@ public abstract class Fighter : MonoBehaviour
 
     IEnumerator Blink() {
         do {
-            
+            imune = true;
             transform.GetComponent<SpriteRenderer>().enabled = !transform.GetComponent<SpriteRenderer>().enabled;
 
             time += Time.deltaTime;
@@ -49,6 +50,7 @@ public abstract class Fighter : MonoBehaviour
         }while (time < imuneTime); 
         transform.GetComponent<SpriteRenderer>().enabled = true;   
         time = 0.0f;
+        imune = false;
     }
 
 

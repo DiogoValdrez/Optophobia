@@ -41,35 +41,68 @@ public abstract class Mover : Fighter //Abstracted means that can only be inheri
         //go to edit->project setting->physics 2d and turn of Queries start in coliders, this way the player doesnt colide with himself
 
         bool teste = false;
-        RaycastHit2D hit = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, moveDelta, moveDelta.magnitude, LayerMask.GetMask("Characters", "Blocking"));
-        if(hit.collider != null)
-        {
-            if(hit.collider.transform.position.y != transform.parent.position.y)
+        if(imune){//TODO: trocar para uma cena melhor em vez deste copy paste no if imune
+            RaycastHit2D hit = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, moveDelta, moveDelta.magnitude, LayerMask.GetMask("Blocking"));
+            if(hit.collider != null)
             {
-                // Obstacle is below or on top, move horizontally
-                Vector2 moveDelta2 = new Vector2(moveDelta.x, 0);
-                RaycastHit2D hit2 = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, moveDelta2, moveDelta2.magnitude, LayerMask.GetMask("Characters", "Blocking"));
-                if(hit2.collider == null)
+                if(hit.collider.transform.position.y != transform.parent.position.y)
                 {
-                    transform.parent.Translate(moveDelta.x, 0, 0);
-                    teste = true;
+                    // Obstacle is below or on top, move horizontally
+                    Vector2 moveDelta2 = new Vector2(moveDelta.x, 0);
+                    RaycastHit2D hit2 = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, moveDelta2, moveDelta2.magnitude, LayerMask.GetMask("Blocking"));
+                    if(hit2.collider == null)
+                    {
+                        transform.parent.Translate(moveDelta.x, 0, 0);
+                        teste = true;
+                    }
+                }
+                if(hit.collider.transform.position.x != transform.parent.position.x && !teste)
+                {
+                    // Obstacle is on the side, move vertically
+                    Vector2 moveDelta2 = new Vector2(0, moveDelta.y);
+                    RaycastHit2D hit2 = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, moveDelta2, moveDelta2.magnitude, LayerMask.GetMask("Blocking"));
+                    if(hit2.collider == null)
+                    {
+                        transform.parent.Translate(0, moveDelta.y, 0);
+                    }
                 }
             }
-            if(hit.collider.transform.position.x != transform.parent.position.x && !teste)
+            else
             {
-                // Obstacle is on the side, move vertically
-                Vector2 moveDelta2 = new Vector2(0, moveDelta.y);
-                RaycastHit2D hit2 = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, moveDelta2, moveDelta2.magnitude, LayerMask.GetMask("Characters", "Blocking"));
-                if(hit2.collider == null)
+                transform.parent.Translate(moveDelta.x, moveDelta.y, 0);
+            }
+        }else{
+            RaycastHit2D hit = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, moveDelta, moveDelta.magnitude, LayerMask.GetMask("Characters", "Blocking"));
+            if(hit.collider != null)
+            {
+                if(hit.collider.transform.position.y != transform.parent.position.y)
                 {
-                    transform.parent.Translate(0, moveDelta.y, 0);
+                    // Obstacle is below or on top, move horizontally
+                    Vector2 moveDelta2 = new Vector2(moveDelta.x, 0);
+                    RaycastHit2D hit2 = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, moveDelta2, moveDelta2.magnitude, LayerMask.GetMask("Characters", "Blocking"));
+                    if(hit2.collider == null)
+                    {
+                        transform.parent.Translate(moveDelta.x, 0, 0);
+                        teste = true;
+                    }
+                }
+                if(hit.collider.transform.position.x != transform.parent.position.x && !teste)
+                {
+                    // Obstacle is on the side, move vertically
+                    Vector2 moveDelta2 = new Vector2(0, moveDelta.y);
+                    RaycastHit2D hit2 = Physics2D.BoxCast(transform.position + new Vector3(collider2d.offset[0], collider2d.offset[1], 0), collider2d.size, 0, moveDelta2, moveDelta2.magnitude, LayerMask.GetMask("Characters", "Blocking"));
+                    if(hit2.collider == null)
+                    {
+                        transform.parent.Translate(0, moveDelta.y, 0);
+                    }
                 }
             }
+            else
+            {
+                transform.parent.Translate(moveDelta.x, moveDelta.y, 0);
+            }
         }
-        else
-        {
-            transform.parent.Translate(moveDelta.x, moveDelta.y, 0);
-        }
+        
         
         
         

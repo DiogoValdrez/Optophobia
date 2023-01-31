@@ -1248,7 +1248,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &1156664425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2542,7 +2542,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9c6372b481b4898418547a4f0373984a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2769,7 +2769,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2db73b6af59b2814e955b05d8fd3071d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.18
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2964,7 +2964,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.508
+  m_Volume: 0.25
   m_Pitch: 1
   Loop: 0
   Mute: 0

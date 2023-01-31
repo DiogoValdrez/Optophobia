@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : Mover
 {
-    public Transform playerTransform;
     private Vector3 startingPosition;
     public float triggerLenght = 3;
     public float chaseLenght = 5;

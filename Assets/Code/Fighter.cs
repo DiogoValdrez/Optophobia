@@ -18,6 +18,7 @@ public abstract class Fighter : MonoBehaviour
 
 
     public bool ahh = false;
+    private float time = 0.0f;
 
     // All fighters can ReceiveDamage / Die
     protected virtual void ReceiveDamage(Damage dmg)
@@ -33,8 +34,24 @@ public abstract class Fighter : MonoBehaviour
                 hitpoint = 0;
                 Death();
             }
+            StartCoroutine(Blink());
         }
     }
+
+
+    IEnumerator Blink() {
+        do {
+            
+            transform.GetComponent<SpriteRenderer>().enabled = !transform.GetComponent<SpriteRenderer>().enabled;
+
+            time += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }while (time < imuneTime); 
+        transform.GetComponent<SpriteRenderer>().enabled = true;   
+        time = 0.0f;
+    }
+
+
     //maybe provisorio em public, tenho de trocar quando tiver game manager
     public virtual void Death()
     {

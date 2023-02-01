@@ -7,11 +7,11 @@ public class OrbitSpeedSlider : MonoBehaviour
 {
     public Slider slider;
 
-    public void SetOrbitSpeed(){
+    public void SetOrbitSpeed(){//TODO: meter nas playerprefs?
         GameManager.instance.SetOrbitSpeed(slider.value);
     }
     void Update()
     {
-        slider.value = GameManager.instance.OrbitSpeed*0.5f;
+        slider.value = GameManager.instance.OrbitSpeed;
     }
 }

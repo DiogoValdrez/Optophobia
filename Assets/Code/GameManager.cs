@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         //to prevent duplicates of the game manager when returning to main we could just put the game manager on the loading screen before the game starts
     }
+    public void Start(){
+        AudioListener.volume = PlayerPrefs.GetFloat("volume");
+    }
 
     public void ClearSaves()
     {
@@ -89,7 +92,7 @@ public class GameManager : MonoBehaviour
 
     public void SetOrbitSpeed(float percentage)
     {
-        OrbitSpeed = percentage*2;
+        OrbitSpeed = percentage;
     }
 
 }

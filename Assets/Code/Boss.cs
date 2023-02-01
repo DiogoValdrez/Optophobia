@@ -21,6 +21,7 @@ public class Boss : Enemy
         base.FixedUpdate();
         if(hitpoint<=5 && firstTime){
             firstTime = false;
+            transform.GetComponent<SpriteRenderer>().color = Color.red;
             speed +=1;
             GameObject child1 = Instantiate(miniumPrefab, transform.position, Quaternion.identity);
             child1.GetComponent<Transform>().localPosition = new Vector3(2, 0, 0);

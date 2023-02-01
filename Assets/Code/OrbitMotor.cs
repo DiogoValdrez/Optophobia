@@ -27,6 +27,7 @@ public class OrbitMotor : MonoBehaviour //TODO: MAke inherit from orbit make so 
         if(!PauseMenu.GameIsPaused)
         {
             transform.RotateAround(target.position, zAxis, speed);
+            transform.eulerAngles = new Vector3(0, 0, 0);
         }
         
     }

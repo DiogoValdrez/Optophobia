@@ -25,12 +25,12 @@ public class MainMenu : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
-    public void Start()
-    {
-        if(!PlayerPrefs.HasKey("volume")){
-            PlayerPrefs.SetFloat("volume", 0.5f);
-            AudioListener.volume = PlayerPrefs.GetFloat("volume");
-        }
-    }
+    // public void Start()
+    // {
+    //     if(!PlayerPrefs.HasKey("volume")){
+    //         PlayerPrefs.SetFloat("volume", 0.5f);
+    //         AudioListener.volume = PlayerPrefs.GetFloat("volume");
+    //     }
+    // }
        
 }

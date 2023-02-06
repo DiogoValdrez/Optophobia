@@ -25,7 +25,6 @@ public abstract class Mover : Fighter //Abstracted means that can only be inheri
         }
 
         //rotate the sprite, 
-        //TODO: change with twin stick funcionality?
         if(x < 0){
             transform.localScale = new Vector3(-1, 1, 1);
         }else if(x > 0){

@@ -8,11 +8,11 @@ public class VolumeSlider : MonoBehaviour
     public Slider slider;
 
     public void SetVolume(){
-        PlayerPrefs.SetFloat("volume", slider.value);
-        AudioListener.volume = PlayerPrefs.GetFloat("volume");
+        GameManager.instance.SetVolume(slider.value);
+        AudioListener.volume = GameManager.instance.volume;
     }
     void Update()
     {
-        slider.value = PlayerPrefs.GetFloat("volume");
+        slider.value = GameManager.instance.volume;
     }
 }

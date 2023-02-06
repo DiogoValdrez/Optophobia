@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : Mover
 {   
-    public GameObject deathMenuCanvas;
     public bool playerDead = false;
 
     protected AudioSource audioSource;//TODO: maybe meter no mover
@@ -18,7 +17,7 @@ public class Player : Mover
         DontDestroyOnLoad(transform.parent.gameObject);// this also saves its children
     }
 
-    void FixedUpdate()
+    void Update()
     {
         //get the input(maybe trade with button insted of horizontal and vertical)
         float x = Input.GetAxisRaw("Horizontal");
@@ -49,7 +48,7 @@ public class Player : Mover
     public override void Death()
     {
         Time.timeScale = 0f;
-        deathMenuCanvas.transform.GetChild(0).gameObject.SetActive(true);
+        GameManager.instance.DeathMenuCanvas.transform.GetChild(0).gameObject.SetActive(true);
         playerDead = true;
         //Destroy(transform.parent.gameObject);
     }

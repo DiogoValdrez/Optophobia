@@ -55,10 +55,9 @@ public class GameManager : MonoBehaviour
     {
         string s = "";
 
-        //POr enquanto nao serve para nada pq aquilo grava o state anterior
         s += "0" + "|";
         s += volume.ToString() + "|";
-        s += orbitSpeed.ToString();
+        s += orbitSpeed.ToString() + "|";
 
         PlayerPrefs.SetString("SaveState", s);
     }
@@ -74,14 +73,12 @@ public class GameManager : MonoBehaviour
         }
 
         string[] data = PlayerPrefs.GetString("SaveState").Split('|');
-        volume = int.Parse(data[1]);
-        orbitSpeed = int.Parse(data[2]);
+        volume = float.Parse(data[1]);
+        orbitSpeed = float.Parse(data[2]);
 
         playerWrapper.transform.position = GameObject.Find("SpawnPoint").transform.position;
         DeathMenuCanvas = GameObject.Find("CanvasDeathMenu");
 
-
-        Debug.Log("Loaded");
     }
 
     public void SetOrbitSpeed(float percentage)

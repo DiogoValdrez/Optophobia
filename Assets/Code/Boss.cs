@@ -23,12 +23,18 @@ public class Boss : Enemy
             firstTime = false;
             transform.GetComponent<SpriteRenderer>().color = Color.red;
             speed +=1;
-            GameObject child1 = Instantiate(miniumPrefab, transform.position, Quaternion.identity);
-            child1.GetComponent<Transform>().localPosition = new Vector3(2, 0, 0);
-            door.AddEnemy(child1);
-            GameObject child2 = Instantiate(miniumPrefab, transform.position, Quaternion.identity);
-            child2.GetComponent<Transform>().localPosition = new Vector3(-2, 0, 0);
-            door.AddEnemy(child2);
+            GameObject mini1 = Instantiate(miniumPrefab, transform.position, Quaternion.identity);          
+            door.AddEnemy(mini1);
+            GameObject mini2 = Instantiate(miniumPrefab, transform.position, Quaternion.identity);
+            door.AddEnemy(mini2);
+
+            if(GameManager.instance.playerWrapper.transform.position.x < transform.position.x - 4 && GameManager.instance.playerWrapper.transform.position.x > transform.position.x + 4){
+                mini1.GetComponent<Transform>().position = transform.position + new Vector3(-2, 0, 0);
+                mini2.GetComponent<Transform>().position =  transform.position + new Vector3(2, 0, 0);
+            }else{
+                mini1.GetComponent<Transform>().position = transform.position + new Vector3(0, 2, 0);
+                mini2.GetComponent<Transform>().position =  transform.position + new Vector3(0, -2, 0);
+            }
         }
     }
 }

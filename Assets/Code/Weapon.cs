@@ -10,6 +10,8 @@ public class Weapon : Collidable
     protected float attackStartAng;
     protected bool attacking = false;
     protected bool attackPowered = false;
+    public float pushForce = 2.0f;
+    public float damagePoint = 1.0f;
 
     protected AudioSource audioSource;
     // public AudioClip swingSound;
@@ -89,9 +91,9 @@ public class Weapon : Collidable
         {
             Damage dmg = new Damage
             {
-                damageAmount = 1,//damagePoint[weaponLevel],
+                damageAmount = damagePoint,//damagePoint[weaponLevel],
                 origin = transform.position,
-                pushForce = 2.0f,//pushForce[weaponLevel]
+                pushForce = pushForce,//pushForce[weaponLevel]
             };
 
             if(attackPowered){
@@ -101,7 +103,7 @@ public class Weapon : Collidable
                 coll.SendMessage("ReceiveDamage", dmg);
             }
         }
-        if(coll.tag == "Orbit")
+        if(coll.tag == "Orbit" && Time.time - Time.timeSinceLevelLoad>0.5f)
         {
             Damage dmg = new Damage
             {
